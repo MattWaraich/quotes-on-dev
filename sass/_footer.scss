@@ -1,0 +1,15 @@
+/* FOOTER */
+/* Main Nav */
+
+.main-navigation-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end !important;
+  align-items: center;
+}
+.main-navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}

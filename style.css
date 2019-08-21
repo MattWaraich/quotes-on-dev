@@ -313,9 +313,6 @@ ul,
 ol {
   margin: 0 0 1.5rem 3rem; }
 
-ul {
-  list-style: disc; }
-
 ol {
   list-style: decimal; }
 
@@ -413,7 +410,10 @@ textarea {
 a {
   color: royalblue; }
   a:visited {
-    color: purple; }
+    color: purple;
+    text-decoration: none; }
+    a:visited:visited {
+      color: purple; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
   a:focus {
@@ -548,6 +548,11 @@ a {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/* HOME PAGE */
+.home {
+  background-color: black;
+  color: white; }
+
 /* Posts and pages */
 .sticky {
   display: block; }

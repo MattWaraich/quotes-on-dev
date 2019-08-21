@@ -41,6 +41,7 @@ function qod_register_metaboxes() {
 		'id'   => $prefix . 'quote_source_url',
 		'type' => 'text_url',
 	) );
+	
 }
 
 add_action( 'cmb2_admin_init', 'qod_register_metaboxes' );

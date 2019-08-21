@@ -40,3 +40,25 @@ add_action( 'wp_before_admin_bar_render', 'qod_admin_bar_render' );
 	remove_meta_box( 'trackbacksdiv', 'post', 'normal' );
 }
 add_action( 'admin_init', 'qod_remove_comments_meta_boxes' );
+
+// MODIFY DEFAULT WP QUERY TO GENERATE RANDOM 
+function qod_modify_archives( $query ){
+// modify the blog index and single posts
+if( 
+    ( is_home() || is_single() )
+    &&!is_admin() &&  $query->is_main_query()
+    )
+    {
+        $query->set( 'orderby', 'rand');
+        $query->set( 'post_per_page', 1 );
+    } 
+// MODIFY CATEGORIES, DEFAULT ARCHIVES
+    if(
+        ( is_archive() ) && !is_admin() && $query->is_main_query()
+    )
+    {
+        $query->set( 'post_per_page', 5 );
+    }
+}
+// THIS HOOK ALLOWS YOU TO MODIFY SEARCH RESULTS PAGE
+add_action( 'pre_get_posts', 'qod_modify_archives' );
