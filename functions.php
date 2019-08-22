@@ -72,9 +72,7 @@ wp_localize_script('qod-script', 'qod_api', array(
 	'rest_url' => esc_url_raw( rest_url() ),
       'wpapi_nonce' => wp_create_nonce( 'wp_rest' ),
       'post_id' => get_the_ID()
-));
-
-	
+));	
 }
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 /**
